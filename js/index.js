@@ -9,7 +9,7 @@ class Persona {
     }
 }
 
-let User = new Persona("Juan", 56, ["cube", "rampa"])
+let User = new Persona("Juan", "03658721", ["cube", "rampa"])
 
 document.getElementById("nombre").innerHTML = User.nombre
 document.getElementById("numero").innerHTML = User.numero
