@@ -28,10 +28,11 @@ class Utilities {
         )
     }
 
-    public static numberValidation(number: string): boolean {
+    public static idValidation(number: string): boolean {
         let regexNumber: RegExp = /^[0-9]+$/
+        let maxLength = 8
+        if (number.length <= maxLength && number.match(regexNumber)) return true
 
-        if (number.toString().match(regexNumber)) return true
         return false
     }
 }
