@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mango</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="container header">
+        <h1>TURNOS MANGO</h1>
+    </header>
+    
+    <div class="container">
+        <form action="/" id="form" method="post" target="_blank">
+            <div class="form-group">
+                <label for="firstName">Nombre: </label><br>
+                <input type="text" class="form-control" id="firstName" name="firstName" required><br>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Apellido: </label><br>
+                <input type="text" class="form-control" id="lastName" name="lastName" required><br>
+            </div>
+            <div class="form-group">
+                <label for="idUser">Numero Identificación: </label><br>
+                <input type="text" class="form-control" id="idUser" name="idUser" required><br>  
+            </div>
+            <button class="btn btn-primary" type="submit">Registrar</button>
+        </form>
+    </div>
+
+    <div class="container">
+        <button type="button" id="button-get" class="btn btn-primary"> Listar Usuarios</button>
+        <h1>Trabajadores</h1>
+        <ul id="users"></ul>
+    </div>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+<script src="../js/form.js"></script>
+<script src="../js/listUser.js"></script>
+</html>

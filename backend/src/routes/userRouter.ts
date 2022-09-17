@@ -11,7 +11,7 @@ const userController = new UserController()
 
 router.post('/register', userController.register)
 router.put('/', authenticateToken, userController.update)
-router.get('/', userController.gets)
+router.get('/gets', userController.gets)
 router.get('/', authenticateToken, userController.get)
 router.delete('/', authenticateToken, userController.delete)
 

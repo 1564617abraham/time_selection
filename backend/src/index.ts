@@ -6,7 +6,7 @@ import UsersRouter from './routes/userRouter'
 
 const app: Express = express()
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3001
 
 console.log(`Server environment: ${process.env.NODE_ENV}`)
 
