@@ -1,3 +1,4 @@
+
 const formulario = document.querySelector('form')    
     formulario.addEventListener('submit', async(event) => {
         event.preventDefault();
@@ -6,6 +7,7 @@ const formulario = document.querySelector('form')
         )
         await sendDataRegister(data)
         formulario.reset()
+        location.reload()
     })
 
 
@@ -18,3 +20,4 @@ const sendDataRegister = (data) => {
         body: JSON.stringify(data),
     })
 }
+

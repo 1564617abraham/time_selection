@@ -1,8 +1,25 @@
 form .form-control {
-    width: 50vw;
+    width: 25vw;
 }
 
 .container {
     padding:12px;
     margin: 20px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+}
+
+li {
+    list-style: none;
+}
+
+.list {
+    width: 75rem;
+}
+
+.list #personal-search {
+    width: 385.08px;
 }

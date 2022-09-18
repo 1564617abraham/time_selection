@@ -179,6 +179,7 @@ class UserController {
     public async delete( req: any, res: Response) {
         try {
             const {tokenPayload} = req
+            console.log(tokenPayload._id)
 
             if (!tokenPayload || !tokenPayload._id) {
                 ServerResponse.error(
@@ -188,7 +189,7 @@ class UserController {
                 return
             }
 
-            const user = await User.findOne({_id : tokenPayload._id})
+            const user = await User.findOne({'_id' : tokenPayload._id})
 
             if (!user) {
                 throw new Error('No se puede encontró el usuario')
