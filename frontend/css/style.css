@@ -16,6 +16,11 @@ li {
     list-style: none;
 }
 
+.search {
+    display: flex;
+    flex-direction: row;
+}
+
 .list {
     width: 75rem;
 }

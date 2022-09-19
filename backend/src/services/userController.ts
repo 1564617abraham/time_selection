@@ -5,6 +5,7 @@ import ServerResponse from '../utilities/ServerResponse'
 import Jwt from '../utilities/Jwt'
 import { wd } from '../config/workingDirectory'
 import userSchema from '../models/userSchema'
+import { log } from 'console'
 
 class UserController {
 
@@ -51,7 +52,7 @@ class UserController {
                 user: user,
                 accessToken: accessToken,
             }
-            console.log()
+            console.log(registerPayload)
             console.log(user)
             ServerResponse.created(res, 'Te has creado correctamente', registerPayload)
             
@@ -178,25 +179,28 @@ class UserController {
 
     public async delete( req: any, res: Response) {
         try {
+            
+            //res.json({messaje: "User deleted successfully"})
             const {tokenPayload} = req
-            console.log(tokenPayload._id)
+            console.log(req.params.accessToken)
 
-            if (!tokenPayload || !tokenPayload._id) {
-                ServerResponse.error(
-                    res,
-                    'No tienes permisos para realizar esta acción'
-                )
-                return
-            }
+            // if (!tokenPayload || !tokenPayload._id) {
+            //     ServerResponse.error(
+            //         res,
+            //         'No tienes permisos para realizar esta acción'
+            //     )
+            //     return
+            // }
 
-            const user = await User.findOne({'_id' : tokenPayload._id})
+            // const user = await User.findOne({_id : tokenPayload._id})
+            // console.log(user)
+            // if (!user) {
+            //     throw new Error('No se puede encontró el usuario')
+            // }
 
-            if (!user) {
-                throw new Error('No se puede encontró el usuario')
-            }
+            // await user.remove()
 
-            await user.remove()
-
+            const user = await User.findByIdAndDelete(req.params.id)
             console.log('User remove')
             console.log(user)
             ServerResponse.success(

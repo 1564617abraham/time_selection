@@ -13,6 +13,6 @@ router.post('/register', userController.register)
 router.put('/', authenticateToken, userController.update)
 router.get('/gets', userController.gets)
 router.get('/', authenticateToken, userController.get)
-router.delete('/:id', authenticateToken, userController.delete)
+router.delete('/:id', userController.delete)
 
 export default router
